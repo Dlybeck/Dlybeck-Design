@@ -1,0 +1,19 @@
+<!-- @dsCard group="Signature" height=380 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>PullTab preview</title><style>body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font-sans)}</style></head>
+<body>
+<div class="dly-grid-paper" style="display:grid;place-items:end center;height:380px;padding-bottom:20px">
+ <div class="dly-pull" id="pull" style="width:min(300px,86%);height:150px">
+  <div style="position:absolute;inset:0;background:var(--brand);border:1.5px solid var(--ink-fixed);border-radius:4px 10px 10px 10px"></div>
+  <div class="dly-pull-sheet" style="height:230px">
+   <span class="dly-pull-tab" data-label-in="pull" data-label-out="put back">pull</span>
+   <div style="font-weight:800">ScribbleScan · case file</div>
+   <div class="dly-note" style="color:#0b3c78;font-size:1.15rem;line-height:26px">started as a hosted product,<br>now an offline experiment</div>
+  </div>
+  <div class="dly-pull-front" style="height:108px;background:var(--blue-400);border:1.5px solid var(--ink-fixed);border-radius:6px 6px 10px 10px;display:grid;place-items:center;color:var(--ink-fixed);font:800 .9rem var(--font-sans);letter-spacing:.06em">PROJECTS</div>
+ </div>
+</div>
+<script>Dly.PullTab(document.getElementById("pull"),{distance:140})</script>
+</body>
+</html>

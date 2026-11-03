@@ -1,0 +1,3 @@
+- `dl-note.svg`: primary logo. Pinned yellow note with folded corner. Full color, fixed (#FFE94D note, #141C2B ink, #007BFF pin). Min 24px. Title tab, about pages, social cards.
+- `dl-highlight.svg`: secondary logo, transparent background. "dl" over a highlighter swipe with a blue dot. Favicons, avatars, footers.
+- `dl-app-icon.svg` and `dl-app-icon-512.png`: the secondary logo on white, square, for app icons and favicons.

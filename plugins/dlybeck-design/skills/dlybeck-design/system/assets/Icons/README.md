@@ -1,0 +1,1 @@
+20 line icons on a 24px grid: 1.5px stroke, round caps and joins, single ink #141C2B (`ink-fixed`). As `<img>` they stay ink; inline the SVG with `stroke="currentColor"` to follow the theme (use `ink` or `link`). Pair with a label unless universal (home, close, search).

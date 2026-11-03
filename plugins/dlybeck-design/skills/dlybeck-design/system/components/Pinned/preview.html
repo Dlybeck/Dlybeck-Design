@@ -1,0 +1,26 @@
+<!-- @dsCard group="Signature" height=300 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Pinned preview</title><style>body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font-sans)}</style></head>
+<body>
+<div class="dly-grid-paper" id="board" style="position:relative;height:280px;overflow:hidden;cursor:grab;touch-action:none">
+ <div id="layer" style="position:absolute;inset:0">
+  <div class="dly-paper dly-paper--lemon" data-pin="0.5,0.1" style="position:absolute;left:6%;top:22%;width:168px;min-height:112px"><span class="dly-paper-k">Tennis</span><span class="dly-paper-h">Ladder: challenge by Friday</span></div>
+  <div class="dly-paper dly-paper--pink" data-pin="0.08,0.1" style="position:absolute;left:36%;top:16%;width:150px;min-height:116px"><span class="dly-paper-k">Corner pin</span><span class="dly-paper-h">Swings the widest</span></div>
+  <div class="dly-paper dly-paper--mint" data-pin="0.5,0.5" style="position:absolute;left:66%;top:42%;width:140px;min-height:100px"><span class="dly-paper-k">Center pin</span><span class="dly-paper-h">Barely moves</span></div>
+ </div>
+ <span class="dly-note" style="position:absolute;left:14px;bottom:8px;font-size:1.2rem">drag the board</span>
+ <button class="dly-btn dly-btn--ghost" id="bump" type="button" style="position:absolute;right:12px;bottom:12px;font-size:.8rem;min-height:30px;padding:4px 12px">Bump the board</button>
+</div>
+<script>
+var board=document.getElementById("board"),layer=document.getElementById("layer");
+[].forEach.call(layer.querySelectorAll("[data-pin]"),function(el,i){Dly.Pinned(el,{pin:el.dataset.pin.split(",").map(Number),color:["#b42a33","#007bff","#141c2b"][i]})});
+Dly.Pinned.follow(layer);
+var x=0,y=0,d=null;
+board.addEventListener("pointerdown",function(e){if(e.target.closest(".dly-paper,button"))return;board.setPointerCapture(e.pointerId);d={x:e.clientX-x,y:e.clientY-y}});
+board.addEventListener("pointermove",function(e){if(!d)return;x=Math.max(-120,Math.min(120,e.clientX-d.x));y=Math.max(-60,Math.min(60,e.clientY-d.y));layer.style.transform="translate("+x+"px,"+y+"px)"});
+board.addEventListener("pointerup",function(){d=null;Dly.spring(1,0,function(t){layer.style.transform="translate("+(x*t)+"px,"+(y*t)+"px)"},{stiffness:60,damping:14,onDone:function(){x=y=0}})});
+document.getElementById("bump").addEventListener("click",function(){Dly.Pinned.bump(9,0)});
+</script>
+</body>
+</html>

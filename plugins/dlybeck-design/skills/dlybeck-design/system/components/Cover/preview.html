@@ -1,0 +1,40 @@
+<!-- @dsCard height=320 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Cover</title>
+<style>
+html,body{margin:0;height:100%}
+body{background:var(--ground);position:relative;overflow:hidden;font-family:var(--font-sans)}
+svg{position:absolute;left:480px;top:0;width:480px;height:320px}
+.brand{fill:var(--brand)}.hi{fill:var(--hi)}.pink{fill:var(--paper-pink)}.tang{fill:var(--paper-tangerine)}.mint{fill:var(--paper-mint)}.inkf{fill:var(--ink-fixed)}
+.edge{stroke:var(--ink-fixed);stroke-width:1.5}
+.paper{rx:var(--radius-paper)}
+.pinhead{stroke:var(--ink-fixed);stroke-width:1.5}
+.string{fill:none;stroke:var(--ink-2);stroke-width:1.5}
+.name{position:absolute;left:48px;bottom:64px;max-width:440px;margin:0;font:800 100px/.95 var(--font-sans);letter-spacing:-.035em;color:var(--ink)}
+.tag{position:absolute;left:50px;bottom:22px;max-width:440px;margin:0;font:500 14px/1.3 var(--font-sans);color:var(--ink-2)}
+</style></head>
+<body>
+<svg viewBox="0 0 480 320" aria-hidden="true">
+<!--
+blocks: brand slab 216x320 (space-9 multiples, bleeds off top/bottom/right), papers in paper-pink 152x104, paper-tangerine 136x96, paper-mint 128x88, hi strip 96x24, radius-paper corners
+arrangement: one tall brand slab at the right edge with paper blocks pinned across it and onto the ground, each tilted a few degrees
+pattern: the literal motif, pins (discs from radius-pill) joined by sagging strings, because the system's signature element is paper pinned to a board
+steps: space-4 16, space-6 32, space-8 64, space-9 96; radius-paper 3, pin discs r=8
+-->
+<rect class="brand" x="264" y="0" width="216" height="320"/>
+<path class="string" d="M120 64 Q 220 104 316 72"/>
+<path class="string" d="M316 72 Q 300 150 236 196"/>
+<path class="string" d="M120 64 Q 150 150 236 196"/>
+<g transform="rotate(-4 120 64)"><rect class="pink edge paper" x="48" y="56" width="152" height="104"/></g>
+<g transform="rotate(5 316 72)"><rect class="tang edge paper" x="248" y="64" width="136" height="96"/></g>
+<g transform="rotate(-2 236 196)"><rect class="mint edge paper" x="172" y="188" width="128" height="88"/></g>
+<g transform="rotate(-3 380 252)"><rect class="hi edge paper" x="332" y="240" width="96" height="24"/></g>
+<circle class="brand pinhead" cx="120" cy="64" r="8"/>
+<circle class="inkf pinhead" cx="316" cy="72" r="8"/>
+<circle class="brand pinhead" cx="236" cy="196" r="8"/>
+</svg>
+<h1 class="name">dlybeck<br>design</h1>
+<p class="tag">Tie it to real life. Don't simulate it.</p>
+</body>
+</html>

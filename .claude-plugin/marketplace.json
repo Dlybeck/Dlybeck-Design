@@ -1,0 +1,12 @@
+{
+  "name": "dlybeck",
+  "description": "David Lybeck's personal plugins",
+  "owner": { "name": "David Lybeck" },
+  "plugins": [
+    {
+      "name": "dlybeck-design",
+      "source": "./plugins/dlybeck-design",
+      "description": "dlybeck design: David's personal design system (tokens, modes, logos, icons, tactile components) for apps, sites and games."
+    }
+  ]
+}

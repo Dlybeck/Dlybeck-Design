@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&family=Caveat:wght@500;700&family=IBM+Plex+Mono:wght@400;500&display=swap");
+/* dlybeck design: components. Every value comes from tokens. */
+.dly-root,.dly-root body{background:var(--ground);color:var(--ink);font-family:var(--font-sans);font-size:16px;line-height:1.55}
+.dly-grid-paper{background-color:var(--ground);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px}
+.dly-note{font:700 1.4rem/1.1 var(--font-hand);color:var(--link)}
+.dly-label{font:500 .75rem/1.4 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+:where(.dly-btn,.dly-field input,.dly-tag,.dly-trail button,.dly-pull-tab,.dly-hold):focus-visible{outline:2.5px solid var(--action);outline-offset:3px}
+
+/* Button */
+.dly-btn{display:inline-flex;align-items:center;gap:var(--space-2);font:700 .95rem/1.2 var(--font-sans);padding:var(--space-2) 18px;min-height:40px;border-radius:var(--radius-md);border:var(--edge) solid var(--line);cursor:pointer;
+  background:var(--action);color:var(--on-action);box-shadow:var(--lift-sm);transition:transform var(--duration-press) var(--ease-out),box-shadow var(--duration-press) var(--ease-out)}
+.dly-btn:hover{transform:translate(-1px,-1px);box-shadow:var(--lift)}
+.dly-btn:active{transform:translate(2px,2px);box-shadow:none}
+.dly-btn--ghost{background:var(--surface);color:var(--ink)}
+.dly-btn--brand{background:var(--brand);color:var(--on-brand);font-size:1.1rem;font-weight:800}
+.dly-btn:disabled{opacity:.45;box-shadow:none;transform:none;cursor:not-allowed}
+.dly-link{color:var(--link);font-weight:500;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:3px}
+
+/* Field */
+.dly-field{display:grid;gap:6px;min-width:0}
+.dly-field label{font-weight:700;font-size:.875rem;color:var(--ink)}
+.dly-field input,.dly-field textarea{font:inherit;font-size:.95rem;color:var(--ink);background:var(--surface);border:var(--edge) solid var(--line-control);border-radius:var(--radius-md);padding:9px 11px;outline:none;width:100%;box-sizing:border-box}
+.dly-field input:focus,.dly-field textarea:focus{border-color:var(--action);box-shadow:0 0 0 4px var(--hi)}
+.dly-field input[aria-invalid="true"]{border-color:var(--bad)}
+.dly-field .dly-help{font-size:.875rem;color:var(--ink-2)}
+.dly-field .dly-error{font-size:.875rem;color:var(--bad);font-weight:500}
+
+/* Tag */
+.dly-tag{display:inline-flex;align-items:center;gap:6px;font:700 .75rem/1.6 var(--font-sans);padding:1px 10px;border-radius:var(--radius-pill);border:var(--edge) solid var(--line-control);background:var(--surface);color:var(--ink)}
+button.dly-tag{cursor:pointer}
+.dly-tag--on{background:var(--hi);color:var(--ink-fixed);border-color:var(--ink-fixed);box-shadow:var(--lift-sm)}
+.dly-tag--blue{background:var(--tint);color:var(--link);border-color:var(--link)}
+.dly-dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+
+/* Paper */
+.dly-paper{position:relative;background:var(--paper,var(--paper-note));color:var(--ink-fixed);border:var(--edge) solid var(--ink-fixed);border-radius:var(--radius-paper);box-shadow:var(--lift-paper);padding:var(--space-4);display:grid;gap:var(--space-1);align-content:end}
+.dly-paper--lemon{--paper:var(--paper-lemon)}.dly-paper--pink{--paper:var(--paper-pink)}.dly-paper--tangerine{--paper:var(--paper-tangerine)}.dly-paper--mint{--paper:var(--paper-mint)}.dly-paper--sky{--paper:var(--paper-sky)}
+.dly-paper .dly-paper-k{font:500 .62rem var(--font-mono);letter-spacing:.08em;text-transform:uppercase;opacity:.75}
+.dly-paper .dly-paper-h{font:800 1.05rem/1.15 var(--font-sans);letter-spacing:-.01em}
+.dly-paper .dly-paper-s{font-size:.8rem;line-height:1.35;opacity:.85}
+a.dly-paper,button.dly-paper{cursor:pointer;text-align:left;font:inherit;transition:box-shadow var(--duration-press) var(--ease-out),transform var(--duration-press) var(--ease-out)}
+a.dly-paper:hover,button.dly-paper:hover{box-shadow:var(--lift-high);transform:translate(-2px,-3px)}
+
+/* Pin (used by Pinned) */
+.dly-pin{position:absolute;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;z-index:2;background:radial-gradient(circle at 35% 35%,rgba(255,255,255,0.65) 0 2px,transparent 3px),var(--pin,var(--brand));border:var(--edge) solid var(--ink-fixed);box-shadow:2px 3px 0 rgba(20,28,43,0.3)}
+.dly-pinned{transition:box-shadow var(--duration-settle) var(--ease-out),scale var(--duration-settle) var(--ease-out)}
+.dly-pinned.is-inspect{box-shadow:var(--lift-high);scale:1.03;z-index:5}
+
+/* Title tab */
+.dly-titletab{display:inline-flex;align-items:center;gap:10px;background:var(--brand);color:var(--on-brand);font:800 1.15rem/1 var(--font-sans);letter-spacing:-.01em;padding:14px 18px 12px;border-radius:0 0 var(--radius-lg) var(--radius-lg);box-shadow:4px 4px 0 var(--ink-fixed);text-decoration:none;border:0;cursor:pointer}
+.dly-titletab img{width:34px;height:34px;margin:-4px 0 -2px}
+
+/* Trail */
+.dly-trail{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.dly-trail button,.dly-trail a{font:600 .8rem var(--font-sans);background:var(--surface);color:var(--ink);border:var(--edge) solid var(--line-control);border-radius:var(--radius-pill);padding:3px 10px;cursor:pointer;text-decoration:none}
+.dly-trail [aria-current="page"],.dly-trail [aria-current="location"]{background:var(--hi);color:var(--ink-fixed);border-color:var(--ink-fixed)}
+.dly-trail .dly-sep{color:var(--ink-2)}
+
+/* Highlight */
+.dly-hl{background:linear-gradient(100deg,transparent 1%,var(--hl,var(--hi)) 2.5% 97.5%,transparent 99%) 0 0/var(--hl-fill,100%) 100% no-repeat;border-radius:3px;padding:0 .14em;color:var(--ink-fixed);-webkit-box-decoration-break:clone;box-decoration-break:clone}
+@property --hl-fill{syntax:"<percentage>";inherits:true;initial-value:100%}
+.dly-hl[data-draw]{--hl-fill:0%;color:inherit;cursor:pointer;text-decoration:underline dotted var(--link);text-decoration-thickness:2px;text-underline-offset:5px;transition:--hl-fill var(--duration-settle) var(--ease-out),color var(--duration-press)}
+.dly-hl[data-draw].is-drawn{--hl-fill:100%;color:var(--ink-fixed);text-decoration-color:transparent}
+
+/* Hold button */
+.dly-hold{--p:0;position:relative;overflow:hidden;font:800 1.05rem var(--font-sans);color:var(--on-action);border:var(--edge) solid var(--ink-fixed);border-radius:var(--radius-lg);padding:14px 26px;cursor:pointer;touch-action:none;
+  background:linear-gradient(90deg,var(--paper-mint) calc(var(--p) * 100%),var(--action) calc(var(--p) * 100%));
+  box-shadow:calc(5px - var(--p) * 5px) calc(5px - var(--p) * 5px) 0 var(--lift-color);transform:translate(calc(var(--p) * 5px),calc(var(--p) * 5px))}
+.dly-hold span{position:relative}
+.dly-hold.is-past-half{color:var(--ink-fixed)}
+.dly-hold.is-done{background:var(--paper-mint);color:var(--ink-fixed)}
+
+/* Pull tab */
+.dly-pull{position:relative;clip-path:inset(-1000px -60px 0 -60px)}
+.dly-pull-sheet{position:absolute;left:var(--space-3);right:var(--space-3);top:var(--space-2);z-index:2;background:var(--paper-note);color:var(--ink-fixed);border:var(--edge) solid var(--ink-fixed);border-radius:var(--radius-paper);padding:var(--space-3) var(--space-4);transform:translateY(var(--y,0px));
+  background-image:repeating-linear-gradient(transparent 0 25px,#d9e3f0 25px 26px);background-position:0 40px}
+.dly-pull-tab{position:absolute;top:0;left:50%;transform:translate(-50%,-100%);min-width:88px;height:28px;padding:0 12px;background:var(--hi);color:var(--ink-fixed);border:var(--edge) solid var(--ink-fixed);border-bottom:0;border-radius:8px 8px 0 0;font:700 1.05rem/1 var(--font-hand);cursor:grab;touch-action:none;display:grid;place-items:center;white-space:nowrap}
+.dly-pull-tab:active{cursor:grabbing}
+.dly-pull-front{position:absolute;left:0;right:0;bottom:0;z-index:3}
+
+/* Scribble */
+.dly-scribble{color:var(--link)}
+
+/* Deck */
+.dly-deck{position:relative;touch-action:pan-y}
+.dly-deck-card{position:absolute;inset:0;cursor:grab;transition:transform var(--duration-settle) var(--ease-settle)}
+.dly-deck-card.is-drag{transition:none;cursor:grabbing}
+.dly-deck-card.is-fly{transition:transform 380ms cubic-bezier(0.4,0,0.8,0.6)}
+
+@media (prefers-reduced-motion:reduce){.dly-btn,.dly-paper,.dly-deck-card,.dly-pinned,.dly-hl[data-draw]{transition:none!important}}

@@ -1,0 +1,21 @@
+<!-- @dsCard group="Signature" height=300 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Scribble preview</title><style>body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font-sans)}
+.row{display:flex;flex-wrap:wrap;gap:22px 36px;align-items:center;padding:22px 24px}
+.w{font:800 1.15rem var(--font-sans)}
+.cap{font:500 .68rem var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);display:block;margin-bottom:4px}
+</style></head>
+<body class="dly-grid-paper">
+<div class="row" id="arrows"></div>
+<div class="row"><span class="w" data-k="underline">Tennis</span><span class="w" data-k="underline">ScribbleScan</span><span class="w" data-k="underline">Puzzles</span></div>
+<div class="row" style="padding-top:28px"><span class="w" data-k="circle">Websites</span><span class="w" data-k="circle">Gaming</span><span class="w" data-k="circle">College</span></div>
+<script>
+var a=document.getElementById("arrows"),h="";
+["Home","Projects","Tennis"].forEach(function(s){h+='<span class="dly-scribble">'+Dly.Scribble("arrow-curve",s)+'</span>'});
+["Saved","Done"].forEach(function(s){h+='<span class="dly-scribble">'+Dly.Scribble("check",s)+'</span>'});
+h+='<span class="dly-scribble">'+Dly.Scribble("star","Puzzles")+'</span>';a.innerHTML=h;
+[].forEach.call(document.querySelectorAll("[data-k]"),function(el){Dly.Scribble.mark(el,el.dataset.k)});
+</script>
+</body>
+</html>

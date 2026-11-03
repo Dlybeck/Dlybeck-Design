@@ -1,0 +1,17 @@
+<!-- @dsCard group="Signature" height=280 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Deck preview</title><style>body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--font-sans)}</style></head>
+<body>
+<div class="dly-grid-paper" style="display:grid;place-items:center;gap:18px;height:280px">
+ <div class="dly-deck" id="deck" style="width:200px;height:136px">
+  <div class="dly-deck-card dly-paper dly-paper--pink"><span class="dly-paper-k">1 of 4</span><span class="dly-paper-h" style="font-size:1.3rem">Hobbies</span><span class="dly-paper-s">3D printing, gaming, tennis</span></div>
+  <div class="dly-deck-card dly-paper dly-paper--sky"><span class="dly-paper-k">2 of 4</span><span class="dly-paper-h" style="font-size:1.3rem">Projects</span><span class="dly-paper-s">Programs and websites</span></div>
+  <div class="dly-deck-card dly-paper dly-paper--tangerine"><span class="dly-paper-k">3 of 4</span><span class="dly-paper-h" style="font-size:1.3rem">Work</span><span class="dly-paper-s">Coaching tennis to AI tools</span></div>
+  <div class="dly-deck-card dly-paper dly-paper--mint"><span class="dly-paper-k">4 of 4</span><span class="dly-paper-h" style="font-size:1.3rem">Education</span><span class="dly-paper-s">College and the classics</span></div>
+ </div>
+ <button class="dly-btn dly-btn--ghost" id="next" type="button" style="font-size:.85rem;min-height:32px;padding:4px 14px">Next card</button>
+</div>
+<script>var dk=Dly.Deck(document.getElementById("deck"));document.getElementById("next").addEventListener("click",function(){dk.next()})</script>
+</body>
+</html>
